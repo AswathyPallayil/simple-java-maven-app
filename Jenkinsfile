@@ -12,12 +12,6 @@ pipeline {
             }
         }
     }
-}
-stage('Deliver'){
-  steps{
-	sh '.jenkins/scripts/deliver.sh'
-	}
-}
 stage('Test'){
 	steps{
 		sh 'mvn test'
@@ -28,3 +22,12 @@ stage('Test'){
 		}
 	}
 }
+
+stage('Deliver'){
+  steps{
+	sh '.jenkins/scripts/deliver.sh'
+	}
+}
+
+}
+
